@@ -1,8 +1,10 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class SpawnerCore : MonoBehaviour
 {
     public PlayerMemory mem;
+    public GameCore game;
 
     //Spawn Stuff
     public GameObject targetObject;
@@ -26,20 +28,56 @@ public class SpawnerCore : MonoBehaviour
     public GameObject Slot3;
     public GameObject Slot4;
 
+    // SLOTS COSTS
+    public int Slot1Cost = 0;
+    public int Slot2Cost = 0;
+    public int Slot3Cost = 0;
+    public int Slot4Cost = 0;
+
     //UI POSITIONS
     public GameObject pos1;
     public GameObject pos2;
     public GameObject pos3;
     public GameObject pos4;
+    public Text slot1price;
+    public Text slot2price;
+    public Text slot3price;
+    public Text slot4price;
 
-    void Start()
+    //SOUNDS
+    public AudioSource cancel;
+    public AudioSource spawned;
+
+    void Awake()
     {
         mem = FindFirstObjectByType<PlayerMemory>();
+    }
+    void Start()
+    {
         Slot1 = SlotsUpdate(mem, 1);
+        Debug.Log($"SlotsGive(1) = '{mem.SlotsGive(1)}'");
+        Slot1Cost = SlotsCost(mem, 1);
+
         Slot2 = SlotsUpdate(mem, 2);
+        Debug.Log($"SlotsGive(2) = '{mem.SlotsGive(2)}'");
+        Slot2Cost = SlotsCost(mem, 2);
+
         Slot3 = SlotsUpdate(mem, 3);
+        Debug.Log($"SlotsGive(3) = '{mem.SlotsGive(3)}'");
+        Slot3Cost = SlotsCost(mem, 3);
+
         Slot4 = SlotsUpdate(mem, 4);
+        Debug.Log($"SlotsGive(4) = '{mem.SlotsGive(4)}'");
+        Slot4Cost = SlotsCost(mem, 4);
+
         if (Icon) { SpawnIcons(); }
+        else 
+        {
+            slot1price.text = Slot1Cost.ToString() + " $";
+            slot2price.text = Slot2Cost.ToString() + " $";
+            slot3price.text = Slot3Cost.ToString() + " $";
+            slot4price.text = Slot4Cost.ToString() + " $";
+        }
     }
     GameObject SlotsUpdate(PlayerMemory mem, int x)
     {
@@ -66,25 +104,59 @@ public class SpawnerCore : MonoBehaviour
             default:
                 return Basic;
         }
-        
-     
     }
    
     public void SpawnSlot1()
     {
-        Instantiate(Slot1, targetObject.transform.position, Quaternion.identity, parentTransform);
+        if (game.money >= Slot1Cost)
+        {
+            Instantiate(Slot1, targetObject.transform.position, Quaternion.identity, parentTransform);
+            game.moneyadd(-Slot1Cost);
+            spawned.Play();
+        }
+        else
+        {
+            cancel.Play();
+        }
     }
     public void SpawnSlot2()
     {
-        Instantiate(Slot2, targetObject.transform.position, Quaternion.identity, parentTransform);
+        if (game.money >= Slot2Cost)
+        {
+            Instantiate(Slot2, targetObject.transform.position, Quaternion.identity, parentTransform);
+            game.moneyadd(-Slot2Cost);
+            spawned.Play();
+        }
+        else
+        {
+            cancel.Play();
+        }
     }
     public void SpawnSlot3()
     {
-        Instantiate(Slot3, targetObject.transform.position, Quaternion.identity, parentTransform);
+        if (game.money >= Slot3Cost)
+        {
+            Instantiate(Slot3, targetObject.transform.position, Quaternion.identity, parentTransform);
+            game.moneyadd(-Slot3Cost);
+            spawned.Play();
+        }
+        else
+        {
+            cancel.Play();
+        }
     }
     public void SpawnSlot4()
     {
-        Instantiate(Slot4, targetObject.transform.position, Quaternion.identity, parentTransform);
+        if (game.money >= Slot4Cost)
+        {
+            Instantiate(Slot4, targetObject.transform.position, Quaternion.identity, parentTransform);
+            game.moneyadd(-Slot4Cost);
+            spawned.Play();
+        }
+        else
+        {
+            cancel.Play();
+        }
     }
     public void SpawnIcons()
     {
@@ -94,8 +166,34 @@ public class SpawnerCore : MonoBehaviour
         Instantiate(Slot4, pos4.transform.position, Quaternion.identity, parentTransform);
     }
 
-    // Update is called once per frame
-    void Update()
+    int SlotsCost(PlayerMemory mem, int x)
+    {
+        switch (mem.SlotsGive(x))
+        {
+            case "Basic":
+                return 50;
+            case "Miner":
+                return 25;
+            case "Sword":
+                return 100;
+            case "Shield":
+                return 75;
+            case "Bow":
+                return 150;
+            case "Mage":
+                return 200;
+            case "Knight":
+                return 300;
+            case "Giant":
+                return 300;
+            case "Wall":
+                return 50;
+            default:
+                return 50;
+        }
+    }
+        // Update is called once per frame
+        void Update()
     {
         
     }

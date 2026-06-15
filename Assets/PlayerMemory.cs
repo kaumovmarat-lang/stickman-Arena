@@ -2,14 +2,16 @@ using UnityEngine;
 
 public class PlayerMemory : MonoBehaviour
 {
+    //Slots
     public string Slot1 = "Empty";
     public string Slot2 = "Empty";
     public string Slot3 = "Empty";
     public string Slot4 = "Empty";
-    // крутки
+
+    //Wishes
     public int stars = 0;
 
-    //Гача
+    //GachaCheck
     public bool IsMinerOpen = true;
     public bool IsBasicOpen = true;
     public bool IsSwordOpen = true;
@@ -27,11 +29,11 @@ public class PlayerMemory : MonoBehaviour
             case 1:
                 return Slot1;
             case 2:
-                return Slot1;
+                return Slot2;
             case 3:
-                return Slot1;
+                return Slot3;
             case 4:
-                return Slot1;
+                return Slot4;
             default:
                 return "give slot number, idiot";
         }
