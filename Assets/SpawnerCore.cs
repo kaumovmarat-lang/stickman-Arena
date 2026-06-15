@@ -7,6 +7,7 @@ public class SpawnerCore : MonoBehaviour
     //Spawn Stuff
     public GameObject targetObject;
     public Transform parentTransform;
+    public bool Icon = false;
 
     // ALL UNITS
     public GameObject Miner;
@@ -25,6 +26,12 @@ public class SpawnerCore : MonoBehaviour
     public GameObject Slot3;
     public GameObject Slot4;
 
+    //UI POSITIONS
+    public GameObject pos1;
+    public GameObject pos2;
+    public GameObject pos3;
+    public GameObject pos4;
+
     void Start()
     {
         mem = FindFirstObjectByType<PlayerMemory>();
@@ -32,10 +39,11 @@ public class SpawnerCore : MonoBehaviour
         Slot2 = SlotsUpdate(mem, 2);
         Slot3 = SlotsUpdate(mem, 3);
         Slot4 = SlotsUpdate(mem, 4);
+        if (Icon) { SpawnIcons(); }
     }
     GameObject SlotsUpdate(PlayerMemory mem, int x)
     {
-        switch (mem.SlotsGive(x)) 
+        switch (mem.SlotsGive(x))
         {
             case "Basic":
                 return Basic;
@@ -59,7 +67,9 @@ public class SpawnerCore : MonoBehaviour
                 return Basic;
         }
         
+     
     }
+   
     public void SpawnSlot1()
     {
         Instantiate(Slot1, targetObject.transform.position, Quaternion.identity, parentTransform);
@@ -75,6 +85,13 @@ public class SpawnerCore : MonoBehaviour
     public void SpawnSlot4()
     {
         Instantiate(Slot4, targetObject.transform.position, Quaternion.identity, parentTransform);
+    }
+    public void SpawnIcons()
+    {
+        Instantiate(Slot1, pos1.transform.position, Quaternion.identity, parentTransform);
+        Instantiate(Slot2, pos2.transform.position, Quaternion.identity, parentTransform);
+        Instantiate(Slot3, pos3.transform.position, Quaternion.identity, parentTransform);
+        Instantiate(Slot4, pos4.transform.position, Quaternion.identity, parentTransform);
     }
 
     // Update is called once per frame
