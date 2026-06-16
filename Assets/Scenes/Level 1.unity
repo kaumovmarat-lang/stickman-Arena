@@ -885,6 +885,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1075544023}
+  - {fileID: 2090660077}
   - {fileID: 688442347}
   m_Father: {fileID: 1343140104}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1330,6 +1331,7 @@ MonoBehaviour:
   pos2: {fileID: 1437811041}
   pos3: {fileID: 429551238}
   pos4: {fileID: 1288008762}
+  wallpos: {fileID: 0}
   slot1price: {fileID: 0}
   slot2price: {fileID: 0}
   slot3price: {fileID: 0}
@@ -1916,7 +1918,7 @@ MonoBehaviour:
   EnemyCastle: {fileID: 1593561618}
   WinScreen: {fileID: 1148288412}
   LoseScreen: {fileID: 1581396831}
-  money: 0
+  money: 50
   moneyText: {fileID: 2027387837}
   timer: 0
 --- !u!1 &1067753554
@@ -2335,15 +2337,15 @@ MonoBehaviour:
   targetObject: {fileID: 1075544022}
   parentTransform: {fileID: 854754181}
   Icon: 0
-  Miner: {fileID: 0}
+  Miner: {fileID: 7013302266611667998, guid: 9c1778de210f482418f5a23ea4371ae9, type: 3}
   Basic: {fileID: 1043998802142210384, guid: 045b90fb01ee6f54c96f5dd393ffd483, type: 3}
-  Sword: {fileID: 0}
-  Shield: {fileID: 0}
+  Sword: {fileID: 688775848636144835, guid: 495bdc979a4924c4d9cd76a3f91a6a0f, type: 3}
+  Shield: {fileID: 4693484677136686692, guid: 5262226c5aeeb9343b9db3ad6e41d4b9, type: 3}
   Bow: {fileID: 0}
   Mage: {fileID: 0}
-  Knight: {fileID: 0}
+  Knight: {fileID: 6156693218280409595, guid: b04fa815e8856f04887b7bd113f51043, type: 3}
   Giant: {fileID: 0}
-  Wall: {fileID: 0}
+  Wall: {fileID: 4602992344220898691, guid: 3cab998793e184945b0a49136a273df3, type: 3}
   Slot1: {fileID: 0}
   Slot2: {fileID: 0}
   Slot3: {fileID: 0}
@@ -2356,6 +2358,7 @@ MonoBehaviour:
   pos2: {fileID: 0}
   pos3: {fileID: 0}
   pos4: {fileID: 0}
+  wallpos: {fileID: 2090660076}
   slot1price: {fileID: 511261748}
   slot2price: {fileID: 20396883}
   slot3price: {fileID: 280428365}
@@ -2695,10 +2698,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f0ada86c72ed66b429ebfd3fd34cd66f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Slot1: Empty
-  Slot2: Mage
-  Slot3: Knight
-  Slot4: Wall
+  Slot1: Miner
+  Slot2: Empty
+  Slot3: Wall
+  Slot4: Knight
   stars: 0
   IsMinerOpen: 1
   IsBasicOpen: 1
@@ -3573,6 +3576,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2027387835}
   m_CullTransparentMesh: 1
+--- !u!1 &2090660076
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2090660077}
+  m_Layer: 0
+  m_Name: position S
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2090660077
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2090660076}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -5.9000006, y: -2.1786199, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 452800438}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2099111119
 GameObject:
   m_ObjectHideFlags: 0

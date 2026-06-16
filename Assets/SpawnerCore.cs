@@ -39,6 +39,7 @@ public class SpawnerCore : MonoBehaviour
     public GameObject pos2;
     public GameObject pos3;
     public GameObject pos4;
+    public GameObject wallpos;
     public Text slot1price;
     public Text slot2price;
     public Text slot3price;
@@ -110,7 +111,9 @@ public class SpawnerCore : MonoBehaviour
     {
         if (game.money >= Slot1Cost)
         {
-            Instantiate(Slot1, targetObject.transform.position, Quaternion.identity, parentTransform);
+            if (Slot1 == Wall) { Instantiate(Slot1, wallpos.transform.position, Quaternion.identity, parentTransform); }
+            else { Instantiate(Slot1, targetObject.transform.position, Quaternion.identity, parentTransform); }
+            Debug.Log(Slot1);
             game.moneyadd(-Slot1Cost);
             spawned.Play();
         }
@@ -123,7 +126,9 @@ public class SpawnerCore : MonoBehaviour
     {
         if (game.money >= Slot2Cost)
         {
-            Instantiate(Slot2, targetObject.transform.position, Quaternion.identity, parentTransform);
+            if (Slot2 == Wall) { Instantiate(Slot2, wallpos.transform.position, Quaternion.identity, parentTransform); }
+            else { Instantiate(Slot2, targetObject.transform.position, Quaternion.identity, parentTransform); }
+            Debug.Log(Slot2);
             game.moneyadd(-Slot2Cost);
             spawned.Play();
         }
@@ -136,7 +141,9 @@ public class SpawnerCore : MonoBehaviour
     {
         if (game.money >= Slot3Cost)
         {
-            Instantiate(Slot3, targetObject.transform.position, Quaternion.identity, parentTransform);
+            if (Slot3 == Wall) { Instantiate(Slot3, wallpos.transform.position, Quaternion.identity, parentTransform); }
+            else { Instantiate(Slot3, targetObject.transform.position, Quaternion.identity, parentTransform); }
+            Debug.Log(Slot3);
             game.moneyadd(-Slot3Cost);
             spawned.Play();
         }
@@ -149,7 +156,9 @@ public class SpawnerCore : MonoBehaviour
     {
         if (game.money >= Slot4Cost)
         {
-            Instantiate(Slot4, targetObject.transform.position, Quaternion.identity, parentTransform);
+            if (Slot4 == Wall) { Instantiate(Slot4, wallpos.transform.position, Quaternion.identity, parentTransform); }
+            else { Instantiate(Slot4, targetObject.transform.position, Quaternion.identity, parentTransform); }
+            Debug.Log(Slot4);
             game.moneyadd(-Slot4Cost);
             spawned.Play();
         }
