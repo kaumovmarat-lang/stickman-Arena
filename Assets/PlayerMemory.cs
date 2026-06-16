@@ -18,7 +18,7 @@ public class PlayerMemory : MonoBehaviour
     public bool IsShieldOpen = false;
     public bool IsBowOpen = false;
     public bool IsMageOpen = false;
-    public bool IsKnightOpen = false;
+    //public bool IsKnightOpen = false;
     public bool IsGiantOpen = false;
     public bool IsWallOpen = true;
 

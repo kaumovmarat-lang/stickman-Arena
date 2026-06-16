@@ -10,22 +10,25 @@ public class Miner : MonoBehaviour
     void Start()
     {
         moneystat = FindFirstObjectByType<GameCore>();
-        if (miner) { //animator.SetBool("grind", true); }
-    }
-
-    void Update()
-    {
-        if (miner) 
+        if (miner)
         {
-            timer += Time.deltaTime;
-
-            if (timer >= 3f)
-            {
-                moneystat.moneyadd(5);
-                timer = 0f;
-            }
+            //animator.SetBool("grind", true); 
         }
-        
     }
-    
+        void Update()
+        {
+            if (miner)
+            {
+                timer += Time.deltaTime;
+
+                if (timer >= 3f)
+                {
+                    moneystat.moneyadd(5);
+                    timer = 0f;
+                }
+            }
+
+        
+
+    }
 }

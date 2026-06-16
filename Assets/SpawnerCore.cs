@@ -18,7 +18,7 @@ public class SpawnerCore : MonoBehaviour
     public GameObject Shield;
     public GameObject Bow;
     public GameObject Mage;
-    public GameObject Knight;
+    //public GameObject Knight;
     public GameObject Giant;
     public GameObject Wall;
 
@@ -96,8 +96,8 @@ public class SpawnerCore : MonoBehaviour
                 return Bow;
             case "Mage":
                 return Mage;
-            case "Knight":
-                return Knight;
+         /* case "Knight":
+                return Knight; */
             case "Giant":
                 return Giant;
             case "Wall":
@@ -191,8 +191,8 @@ public class SpawnerCore : MonoBehaviour
                 return 150;
             case "Mage":
                 return 200;
-            case "Knight":
-                return 300;
+         /* case "Knight":
+                return 300; */
             case "Giant":
                 return 300;
             case "Wall":
