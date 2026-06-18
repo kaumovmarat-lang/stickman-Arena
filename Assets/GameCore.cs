@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameCore : MonoBehaviour
@@ -19,6 +20,10 @@ public class GameCore : MonoBehaviour
     void Awake()
     {
         mem = FindFirstObjectByType<PlayerMemory>();
+        if (mem == null) 
+        {
+            SceneManager.LoadScene("Whoops");
+        }
     }
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
