@@ -29,8 +29,8 @@ public class Basic : MonoBehaviour
     {
         if (isRunning)
         {
-            /* animator.SetBool("run", true);
-            animator.SetBool("attack", false); */
+            animator.SetBool("run", true);
+            animator.SetBool("attack", false); 
             if (isEnemy) 
             {
                 transform.Translate(Vector2.left * speed * Time.deltaTime);
@@ -42,8 +42,8 @@ public class Basic : MonoBehaviour
         }
         else 
         {
-            /* animator.SetBool("run", false);
-            animator.SetBool("attack", true); */
+             animator.SetBool("run", false);
+            animator.SetBool("attack", true);
             
         }
     }

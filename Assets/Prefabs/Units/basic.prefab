@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0035154077c37d84e891f43de29ea59c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  animator: {fileID: 0}
+  animator: {fileID: 8885095176049074718}
   speed: 1.5
   damage: 2
   isRunning: 1
@@ -139,7 +139,7 @@ Animator:
   m_GameObject: {fileID: 1043998802142210384}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 39b60bb4383826f47be1d5a3ab1660bd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
