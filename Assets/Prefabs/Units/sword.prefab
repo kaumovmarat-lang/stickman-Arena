@@ -110,7 +110,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   animator: {fileID: 0}
   speed: 1.5
-  damage: 5
+  damage: 10
   isRunning: 1
   isEnemy: 0
   isAttacking: 0
@@ -127,7 +127,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   hp: 10
-  money: 35
+  money: 15
   moneystat: {fileID: 0}
 --- !u!95 &7314562115847468637
 Animator:

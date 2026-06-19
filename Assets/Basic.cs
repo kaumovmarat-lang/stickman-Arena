@@ -53,7 +53,7 @@ public class Basic : MonoBehaviour
         if (isAttacking) return;
         if (isEnemy) 
         {
-            if (collision.CompareTag("Player"))
+            if (collision.CompareTag("Player") || collision.CompareTag("PlayerBase"))
             {
                 isRunning = false;
                 isAttacking = true;
@@ -62,7 +62,7 @@ public class Basic : MonoBehaviour
         }
         else 
         {
-            if (collision.CompareTag("Enemy"))
+            if (collision.CompareTag("Enemy") || collision.CompareTag("EnemyBase"))
             {
                 isRunning = false;
                 isAttacking = true;

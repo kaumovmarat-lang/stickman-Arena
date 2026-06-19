@@ -125,7 +125,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   hp: 6
-  money: 10
+  money: 5
   moneystat: {fileID: 0}
 --- !u!95 &1714704122249827875
 Animator:
