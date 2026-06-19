@@ -2940,6 +2940,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 9202541299034883745, guid: ba8ef80059eeaf4498aba4d96255723f, type: 3}
+      propertyPath: Slot1
+      value: Miner
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202541299034883745, guid: ba8ef80059eeaf4498aba4d96255723f, type: 3}
+      propertyPath: Slot3
+      value: Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202541299034883745, guid: ba8ef80059eeaf4498aba4d96255723f, type: 3}
+      propertyPath: Slot4
+      value: Bow
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3837,6 +3849,7 @@ GameObject:
   - component: {fileID: 1593561621}
   - component: {fileID: 1593561623}
   - component: {fileID: 1593561622}
+  - component: {fileID: 1593561624}
   m_Layer: 0
   m_Name: Enemy Castle
   m_TagString: EnemyBase
@@ -4007,6 +4020,30 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &1593561624
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1593561618}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a1f169fc5c10d8844b689129e127e0d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: '::'
+  Miner: {fileID: 0}
+  Basic: {fileID: 0}
+  Sword: {fileID: 0}
+  Shield: {fileID: 0}
+  Bow: {fileID: 0}
+  Mage: {fileID: 0}
+  Knight: {fileID: 0}
+  Giant: {fileID: 0}
+  Wall: {fileID: 0}
+  Transform: {fileID: 0}
+  pos: {fileID: 0}
+  timer: 0
 --- !u!1 &1613440589
 GameObject:
   m_ObjectHideFlags: 0

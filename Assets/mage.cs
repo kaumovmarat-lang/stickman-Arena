@@ -31,14 +31,7 @@ public class mage : MonoBehaviour
         {
             // animator.SetBool("run", true);
             // animator.SetBool("attack", false); 
-            if (isEnemy)
-            {
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
-            }
-            else
-            {
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
+            transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
         else
         {

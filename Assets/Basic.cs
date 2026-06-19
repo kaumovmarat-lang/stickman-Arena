@@ -32,14 +32,7 @@ public class Basic : MonoBehaviour
         {
            animator.SetBool("animations", true);
            animator.SetBool("attack", false); 
-            if (isEnemy) 
-            {
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
-            else
-            {
-                transform.Translate(Vector2.right * speed * Time.deltaTime);
-            }
+           transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
         else 
         {
