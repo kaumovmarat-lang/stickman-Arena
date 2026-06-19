@@ -14,6 +14,7 @@ public class Basic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        transform.localPosition = new Vector3(transform.localPosition.x, -605.21f, transform.localPosition.z); 
         if (isEnemy)
         {
             gameObject.tag = "Enemy";
@@ -29,11 +30,11 @@ public class Basic : MonoBehaviour
     {
         if (isRunning)
         {
-           // animator.SetBool("run", true);
-           // animator.SetBool("attack", false); 
+           animator.SetBool("animations", true);
+           animator.SetBool("attack", false); 
             if (isEnemy) 
             {
-                transform.Translate(Vector2.left * speed * Time.deltaTime);
+                transform.Translate(Vector2.right * speed * Time.deltaTime);
             }
             else
             {
@@ -42,8 +43,8 @@ public class Basic : MonoBehaviour
         }
         else 
         {
-            // animator.SetBool("run", false);
-            //animator.SetBool("attack", true);
+            animator.SetBool("animations", false);
+            animator.SetBool("attack", true);
             
         }
     }
