@@ -13,7 +13,7 @@ public class Giant : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.localPosition = new Vector3(-1023.78f, -606.14f, transform.localPosition.z);
+        
         if (isEnemy)
         {
             gameObject.tag = "Enemy";
@@ -21,6 +21,7 @@ public class Giant : MonoBehaviour
         else
         {
             gameObject.tag = "Player";
+            transform.localPosition = new Vector3(-1023.78f, -606.14f, transform.localPosition.z);
         }
     }
 

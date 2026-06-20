@@ -14,7 +14,7 @@ public class Basic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.localPosition = new Vector3(transform.localPosition.x, -605.21f, transform.localPosition.z); 
+        
         if (isEnemy)
         {
             gameObject.tag = "Enemy";
@@ -22,6 +22,7 @@ public class Basic : MonoBehaviour
         else
         {
             gameObject.tag = "Player";
+            transform.localPosition = new Vector3(transform.localPosition.x, -605.21f, transform.localPosition.z);
         }
     }
 
