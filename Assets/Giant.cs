@@ -17,11 +17,12 @@ public class Giant : MonoBehaviour
         if (isEnemy)
         {
             gameObject.tag = "Enemy";
+            transform.localPosition = new Vector3(-1008.63f, -603.66f, transform.localPosition.z);
         }
         else
         {
             gameObject.tag = "Player";
-            transform.localPosition = new Vector3(-1023.78f, -606.14f, transform.localPosition.z);
+            transform.localPosition = new Vector3(-1023.53f, -603.83f, transform.localPosition.z);
         }
     }
 
@@ -30,14 +31,14 @@ public class Giant : MonoBehaviour
     {
         if (isRunning)
         {
-            // animator.SetBool("run", true);
-            // animator.SetBool("attack", false); 
+            animator.SetBool("run", true);
+            animator.SetBool("attack", false); 
             transform.Translate(Vector2.right * speed * Time.deltaTime);
         }
         else
         {
-            // animator.SetBool("run", false);
-            //animator.SetBool("attack", true);
+            animator.SetBool("run", false);
+            animator.SetBool("attack", true);
 
         }
     }
@@ -71,7 +72,7 @@ public class Giant : MonoBehaviour
         while (target != null)
         {
             target.GetComponent<health>().TakeDamage(damage);
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(6f);
         }
         StopCoroutine(currentcor);
         currentcor = null;

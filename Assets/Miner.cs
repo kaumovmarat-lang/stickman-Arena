@@ -6,14 +6,14 @@ public class Miner : MonoBehaviour
     public GameCore moneystat;
     public float timer = 0f;
     public bool miner;
+    public bool enemy;
 
     void Start()
     {
         moneystat = FindFirstObjectByType<GameCore>();
-        if (miner)
-        {
-            //animator.SetBool("grind", true); 
-        }
+        if (!enemy) { transform.localPosition = new Vector3(-1024.14f, -605.6f, transform.localPosition.z); }
+        else { transform.localPosition = new Vector3(-1007.98f, -605.73f, transform.localPosition.z); }
+        
     }
         void Update()
         {

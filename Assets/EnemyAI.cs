@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class EnemyAI : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class EnemyAI : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        StartCoroutine(SpawnSequence());
     }
 
     // Update is called once per frame
@@ -18,35 +19,36 @@ public class EnemyAI : MonoBehaviour
     {
         timer += Time.deltaTime;
         timerforbasic += Time.deltaTime;
-        if (timerforbasic >= 15f) { Instantiate(Basic, pos.transform.position, Quaternion.identity, Transform); timerforbasic = 0f; }
-        switch (timer)
+        if (timerforbasic >= 30f) { Instantiate(Basic, pos.transform.position, Quaternion.Euler(0f, 180f, 0f), Transform); timerforbasic = 0f; }
+        
+    }
+
+    IEnumerator SpawnSequence()
+    {
+        while (true)
         {
-            case 3f:
-                Instantiate(Miner, pos.transform.position, Quaternion.identity, Transform);
-                break;
-            case 5f:
-                Instantiate(Miner, pos.transform.position, Quaternion.identity, Transform);
-                break;
-            case 26f:
-                Instantiate(Sword, pos.transform.position, Quaternion.identity, Transform);
-                break;
-            case 39f:
-                Instantiate(Basic, pos.transform.position, Quaternion.identity, Transform);
-                break;
-            case 70f:
-                Instantiate(Bow, pos.transform.position, Quaternion.identity, Transform);
-                break;
-            case 100f:
-                Instantiate(Giant, pos.transform.position, Quaternion.identity, Transform);
-                break;
-            case 120f:
-                timer = 0f;
-                break;
+            yield return new WaitForSeconds(3f);
+            Instantiate(Miner, pos.transform.position, Quaternion.Euler(0f, 180f, 0f), Transform);
+
+            yield return new WaitForSeconds(2f);
+            Instantiate(Miner, pos.transform.position, Quaternion.Euler(0f, 180f, 0f), Transform);
+
+            yield return new WaitForSeconds(21f);
+            Instantiate(Sword, pos.transform.position, Quaternion.Euler(0f, 180f, 0f), Transform);
+
+            yield return new WaitForSeconds(13f);
+            Instantiate(Basic, pos.transform.position, Quaternion.Euler(0f, 180f, 0f), Transform);
+
+            yield return new WaitForSeconds(31f);
+            Instantiate(Bow, pos.transform.position, Quaternion.Euler(0f, 180f, 0f), Transform);
+
+            yield return new WaitForSeconds(30f);
+            Instantiate(Giant, pos.transform.position, Quaternion.Euler(0f, 180f, 0f), Transform);
+
+            yield return new WaitForSeconds(20f);
 
         }
 
     }
-
-
 }
 

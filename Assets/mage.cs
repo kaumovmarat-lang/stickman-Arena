@@ -14,6 +14,7 @@ public class mage : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        transform.localPosition = new Vector3(transform.localPosition.x, -605.04f, transform.localPosition.z); 
         if (isEnemy)
         {
             gameObject.tag = "Enemy";

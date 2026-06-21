@@ -14,7 +14,7 @@ public class Basic : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        transform.localPosition = new Vector3(transform.localPosition.x, -605.21f, transform.localPosition.z);
         if (isEnemy)
         {
             gameObject.tag = "Enemy";
@@ -22,7 +22,7 @@ public class Basic : MonoBehaviour
         else
         {
             gameObject.tag = "Player";
-            transform.localPosition = new Vector3(transform.localPosition.x, -605.21f, transform.localPosition.z);
+            
         }
     }
 
@@ -46,6 +46,7 @@ public class Basic : MonoBehaviour
     private void OnTriggerStay2D(Collider2D collision)
     {
         if (isAttacking) return;
+        if (collision == null) return;
         if (isEnemy) 
         {
             if (collision.CompareTag("Player") || collision.CompareTag("PlayerBase"))
@@ -53,6 +54,7 @@ public class Basic : MonoBehaviour
                 isRunning = false;
                 isAttacking = true;
                 currentcor = StartCoroutine(Attack(collision));
+                
             }
         }
         else 
@@ -70,8 +72,9 @@ public class Basic : MonoBehaviour
     {
         var target = collision.gameObject;
         while (target != null) {
-            target.GetComponent<health>().TakeDamage(damage);
             yield return new WaitForSeconds(3f);
+            target.GetComponent<health>().TakeDamage(damage);
+            if (target == null) break;
         }
         StopCoroutine(currentcor);
         currentcor = null;

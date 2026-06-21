@@ -1981,6 +1981,37 @@ MonoBehaviour:
   slot4price: {fileID: 0}
   cancel: {fileID: 0}
   spawned: {fileID: 0}
+--- !u!1 &619350452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 619350453}
+  m_Layer: 0
+  m_Name: Enemy Units
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &619350453
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 619350452}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 1009.75824, y: 601.98285, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1343140104}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -2281,7 +2312,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: -1
+  m_SortingOrder: -2
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4061456771030519998, guid: 3375b7e79eb774945b8a045488449553, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -3582,6 +3613,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 854754181}
+  - {fileID: 619350453}
   - {fileID: 452800438}
   m_Father: {fileID: 1046922840}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4202,7 +4234,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.4862745}
@@ -4325,22 +4357,22 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1593561618}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a1f169fc5c10d8844b689129e127e0d5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  Miner: {fileID: 0}
-  Basic: {fileID: 0}
-  Sword: {fileID: 0}
-  Shield: {fileID: 0}
-  Bow: {fileID: 0}
-  Mage: {fileID: 0}
-  Knight: {fileID: 0}
-  Giant: {fileID: 0}
-  Wall: {fileID: 0}
-  Transform: {fileID: 0}
-  pos: {fileID: 0}
+  Miner: {fileID: 7013302266611667998, guid: 8ee862273830081409952005711ad5c7, type: 3}
+  Basic: {fileID: 1043998802142210384, guid: 3125601acc94e8a41b0370d28e897ff7, type: 3}
+  Sword: {fileID: 688775848636144835, guid: f7aa7d868b056f94b843aa924247bd3d, type: 3}
+  Shield: {fileID: 4693484677136686692, guid: 3d6bb9d878d994044be4d30b704c0db3, type: 3}
+  Bow: {fileID: 1933247145822816787, guid: a8217840e31d7b547a819b3548a1e433, type: 3}
+  Mage: {fileID: 2769389786820064140, guid: 61bbf066534adc348a4f4f98c0342176, type: 3}
+  Knight: {fileID: 6156693218280409595, guid: c6104023cb0e5374285498e29d9fde17, type: 3}
+  Giant: {fileID: 4295075004595806662, guid: 08555bfad40b1e7418021c18fceb03f0, type: 3}
+  Wall: {fileID: 4602992344220898691, guid: 19e5c4f04f46469428579bd6b1e80284, type: 3}
+  Transform: {fileID: 619350453}
+  pos: {fileID: 688442346}
   timer: 0
   timerforbasic: 0
 --- !u!1 &1613440589
@@ -4410,7 +4442,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 0.4862745}
@@ -9478,13 +9510,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1688052872}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.2863959, y: 0.64651173, z: -0.64651173, w: -0.2863958}
-  m_LocalPosition: {x: 8.25, y: 3.57, z: -0}
+  m_LocalRotation: {x: 0.3422608, y: 0.61875486, z: -0.61875486, w: -0.3422607}
+  m_LocalPosition: {x: 11.51, y: 3.18, z: 0}
   m_LocalScale: {x: 1.91, y: 1.79, z: 4.37}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: -317.785, y: -90, z: 90}
+  m_LocalEulerAnglesHint: {x: -327.898, y: -90, z: 90}
 --- !u!1 &1739809359
 GameObject:
   m_ObjectHideFlags: 0
@@ -10117,6 +10149,22 @@ PrefabInstance:
     - target: {fileID: 3476063642707110648, guid: ba8ef80059eeaf4498aba4d96255723f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202541299034883745, guid: ba8ef80059eeaf4498aba4d96255723f, type: 3}
+      propertyPath: Slot1
+      value: Miner
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202541299034883745, guid: ba8ef80059eeaf4498aba4d96255723f, type: 3}
+      propertyPath: Slot2
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202541299034883745, guid: ba8ef80059eeaf4498aba4d96255723f, type: 3}
+      propertyPath: Slot3
+      value: Mage
+      objectReference: {fileID: 0}
+    - target: {fileID: 9202541299034883745, guid: ba8ef80059eeaf4498aba4d96255723f, type: 3}
+      propertyPath: Slot4
+      value: Shield
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
