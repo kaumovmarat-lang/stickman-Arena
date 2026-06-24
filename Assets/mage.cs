@@ -1,16 +1,18 @@
-using System.Net.NetworkInformation;
-using UnityEngine;
 using System.Collections;
+using System.Net.NetworkInformation;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class mage : MonoBehaviour
 {
     public Animator animator;
     public float speed = 1.5f;
-    public double damage = 2;
+    public float damage = 2;
     public bool isRunning = true;
     public bool isEnemy = false;
     public bool isAttacking = false;
     private Coroutine currentcor = null;
+    public AudioSource sound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -60,7 +62,9 @@ public class mage : MonoBehaviour
             {
                 isRunning = false;
                 isAttacking = true;
-                currentcor = StartCoroutine(Attack(collision));
+                if (collision.GetComponent<health>().hp < collision.GetComponent<health>().Maxhp) { currentcor = StartCoroutine(Attack(collision)); }
+                
+                
             }
         }
 
@@ -70,8 +74,10 @@ public class mage : MonoBehaviour
         var target = collision.gameObject;
         while (target != null)
         {
-            target.GetComponent<health>().TakeDamage(damage);
             yield return new WaitForSeconds(3f);
+            sound.Play();
+            target.GetComponent<health>().TakeDamage(damage);
+            yield return new WaitForSeconds(1f);
         }
         StopCoroutine(currentcor);
         currentcor = null;

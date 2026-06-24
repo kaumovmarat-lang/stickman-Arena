@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Miner : MonoBehaviour
@@ -7,7 +8,7 @@ public class Miner : MonoBehaviour
     public float timer = 0f;
     public bool miner;
     public bool enemy;
-
+    public AudioSource sound;
     void Start()
     {
         moneystat = FindFirstObjectByType<GameCore>();
@@ -23,8 +24,9 @@ public class Miner : MonoBehaviour
 
                 if (timer >= 3f)
                 {
-                    moneystat.moneyadd(5);
-                    timer = 0f;
+                sound.Play();
+                moneystat.moneyadd(5);
+                timer = 0f;
                 }
             }
 

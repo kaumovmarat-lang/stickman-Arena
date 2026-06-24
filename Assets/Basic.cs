@@ -6,11 +6,12 @@ public class Basic : MonoBehaviour
 {
     public Animator animator;
     public float speed = 1.5f;
-    public double damage = 2;
+    public float damage = 2;
     public bool isRunning = true;
     public bool isEnemy = false;
     public bool isAttacking = false;
     private Coroutine currentcor = null;
+    public AudioSource sound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -72,9 +73,10 @@ public class Basic : MonoBehaviour
     {
         var target = collision.gameObject;
         while (target != null) {
-            yield return new WaitForSeconds(3f);
+            yield return new WaitForSeconds(2f);
+            sound.Play();
             target.GetComponent<health>().TakeDamage(damage);
-            if (target == null) break;
+            yield return new WaitForSeconds(1f);
         }
         StopCoroutine(currentcor);
         currentcor = null;

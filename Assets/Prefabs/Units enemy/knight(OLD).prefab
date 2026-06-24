@@ -114,6 +114,7 @@ MonoBehaviour:
   isRunning: 1
   isEnemy: 0
   isAttacking: 0
+  sound: {fileID: 0}
 --- !u!114 &6449485414526753251
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -126,6 +127,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c154c02bc1da54d91c60bb3867bace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  Maxhp: 0
   hp: 30
   money: 100
   moneystat: {fileID: 0}

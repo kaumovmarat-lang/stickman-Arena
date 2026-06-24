@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class health : MonoBehaviour
 {
-    public double hp = 10;
+    public float Maxhp; 
+    public float hp = 10;
     public int money = 25;
     public GameCore moneystat;
 
@@ -10,6 +11,7 @@ public class health : MonoBehaviour
     void Awake()
     {
         moneystat = FindFirstObjectByType<GameCore>();
+        Maxhp = hp;
     }
 
     // Update is called once per frame
@@ -21,7 +23,7 @@ public class health : MonoBehaviour
             Destroy(gameObject); 
         }
     }
-    public void TakeDamage(double damage)
+    public void TakeDamage(float damage)
     {
         hp -= damage;
     }

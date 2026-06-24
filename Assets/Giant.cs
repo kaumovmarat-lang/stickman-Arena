@@ -1,15 +1,17 @@
-using UnityEngine;
 using System.Collections;
+using Unity.VisualScripting;
+using UnityEngine;
 
 public class Giant : MonoBehaviour
 {
     public Animator animator;
     public float speed = 1f;
-    public double damage = 30;
+    public float damage = 30;
     public bool isRunning = true;
     public bool isEnemy = false;
     public bool isAttacking = false;
     private Coroutine currentcor = null;
+    public AudioSource sound;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -71,8 +73,10 @@ public class Giant : MonoBehaviour
         var target = collision.gameObject;
         while (target != null)
         {
+            yield return new WaitForSeconds(5f);
+            sound.Play();
             target.GetComponent<health>().TakeDamage(damage);
-            yield return new WaitForSeconds(6f);
+            yield return new WaitForSeconds(1f);
         }
         StopCoroutine(currentcor);
         currentcor = null;

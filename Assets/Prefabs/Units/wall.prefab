@@ -112,6 +112,7 @@ MonoBehaviour:
   moneystat: {fileID: 0}
   timer: 0
   miner: 0
+  enemy: 0
 --- !u!114 &4519059086011396914
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,7 +125,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 35c154c02bc1da54d91c60bb3867bace, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  hp: 6
+  Maxhp: 0
+  hp: 50
   money: 10
   moneystat: {fileID: 0}
 --- !u!95 &6977791088936005493
@@ -187,7 +189,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 2.02, y: 2.5}
+    oldSize: {x: 3, y: 3}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
