@@ -13,4 +13,12 @@ public class SceneSelector : MonoBehaviour
         SceneManager.LoadScene(scene);
         Debug.Log($"сцена {scene} загружена");
     }
+    public void LoaderByName(int scene)
+    {
+        SceneManager.LoadScene(scene);
+    }
+    public void exitshit()
+    {
+        Application.Quit();
+    }
 }
